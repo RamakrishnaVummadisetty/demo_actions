@@ -33,14 +33,14 @@ jobs:
     
 ##################################
 
-    - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      # run: echo "Quinnox@1" | docker login -u "ramakrishnav1" --password-stdin
+    # - name: Log in to Docker Hub
+    #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    #   # run: echo "Quinnox@1" | docker login -u "ramakrishnav1" --password-stdin
 
-    - name: Build and push Docker image
-      run: |
-        docker build -t docker.io/ramakrishnav1/demo-app .
-        docker push docker.io/ramakrishnav1/demo-app
+    # - name: Build and push Docker image
+    #   run: |
+    #     docker build -t docker.io/ramakrishnav1/demo-app .
+    #     docker push docker.io/ramakrishnav1/demo-app
 
 ######################################
     # - name: Build & push Docker image
@@ -54,17 +54,17 @@ jobs:
     #     password: ${{ secrets.DOCKER_PASSWORD }}
 
 #####################
-    # - name: Build Docker image
-    #   run: docker build -t ramakrishnav1/demo-app:latest .
+    - name: Build Docker image
+      run: docker build -t ramakrishnav1/demo-app:latest .
       
-    # - name: Log in to Docker Hub
-    #   uses: docker/login-action@v2
-    #   with:
-    #     username: ${{ secrets.DOCKER_USERNAME }}
-    #     password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ramakrishnav1
+        password: Quinnox@1
         
-    # - name: Push Docker image to Docker Hub
-    #   run: docker push ramakrishnav1/demo-app:latest
+    - name: Push Docker image to Docker Hub
+      run: docker push ramakrishnav1/demo-app:latest
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
