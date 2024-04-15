@@ -79,8 +79,8 @@ jobs:
     #     username: ramakrishnav1
     #     password: docker123
         
-    - name: Push Docker image to Docker Hub
-      run: docker push ramakrishnav1/demo-app:latest
+    # - name: Push Docker image to Docker Hub
+    #   run: docker push ramakrishnav1/demo-app:latest
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
